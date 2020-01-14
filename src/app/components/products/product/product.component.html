@@ -1,0 +1,48 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+            <div class="from-group">
+                <input type="text" 
+                class="from-control"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.name"
+                placeholder="Nombre de Producto">
+            </div>
+            <div class="from-group">
+                <input type="text" 
+                class="from-control"
+                name="category"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.category"
+                placeholder="Categoria de Producto">
+            </div>
+            <div class="from-group">
+                <input type="text" 
+                class="from-control"
+                name="location"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.location"
+                placeholder="Locacion de Producto">
+            </div>
+            <div class="from-group">
+                <input type="text" 
+                class="from-control"
+                name="price"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.price"
+                placeholder="Precio de Producto">
+            </div>
+
+            <div class="from-group">
+                <button class="btn btn-success" type="submit">
+                    <i class="fas plus-circle"></i> Agregar
+                </button>
+                <button class="btn btn-warning" type="reset" (click)="resetForm(productForm)">
+                    <i class="fas fa-sync-alt"></i> Limpiar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
